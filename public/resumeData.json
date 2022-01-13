@@ -92,6 +92,12 @@
   "portfolio": {
     "projects": [
       {
+        "title": "MetaVerse Chat (React JS)",
+        "category": "",
+        "image": "metaverse.jpg",
+        "url": "https://metaverse-challenge-alpha.vercel.app/"
+      },
+      {
         "title": "Disney+ Clone (React JS)",
         "category": "",
         "image": "disneyplus.png",
@@ -106,7 +112,7 @@
       {
         "title": "MetaVerse Chat (React JS)",
         "category": "",
-        "image": "news.png",
+        "image": "metaverse.jpg",
         "url": "https://metaverse-challenge-alpha.vercel.app/"
       }
     ]
