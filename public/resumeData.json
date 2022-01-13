@@ -1,0 +1,126 @@
+{
+  "main": {
+    "name": "Suraj Raj",
+    "occupation": "React Js Developer",
+    "description": "I eat, sleep and breathe React",
+    "image": "profile.png",
+    "bio": "Hi there! I am Suraj. I am a Certified Ethical Hacker v10 from Ec Council and a Software Engineer at Capgemini. I have an experience of one year in Web development. I am constantly seeking to engage my knowledge to learn something useful and keep challenging myself to be a better performer in accordance with the company's standards.",
+    "contactmessage": "Get in touch with me!",
+    "email": "srraaz1998@gmail.com",
+    "phone": "+91 7739450832",
+    "address": {
+      "street": "",
+      "city": "Siwan",
+      "state": "Bihar",
+      "pincode": "841231"
+    },
+    "website": "https://linktr.ee/anonymous__raaz",
+    "resumedownload": "https://drive.google.com/file/d/1lcovwJLdMKW579brDsTp1we0BKCVKXzP/view?usp=sharing",
+    "social": [
+      {
+        "name": "youtube",
+        "url": "https://www.youtube.com/channel/UCiPgjYq6PnUx7J77tDSOgQw",
+        "className": "fa fa-youtube"
+      },
+      {
+        "name": "facebook",
+        "url": "https://www.facebook.com/samromeoprasad",
+        "className": "fa fa-facebook"
+      },
+      {
+        "name": "linkedin",
+        "url": "https://www.linkedin.com/in/surazraaz1998/",
+        "className": "fa fa-linkedin"
+      },
+      {
+        "name": "instagram",
+        "url": "https://www.instagram.com/__r.a.a.j/",
+        "className": "fa fa-instagram"
+      },
+      {
+        "name": "github",
+        "url": "https://github.com/surazraaz1998",
+        "className": "fa fa-github"
+      }
+    ]
+  },
+  "resume": {
+    "skillmessage": "My Programming Language Proficiency",
+    "education": [
+      {
+        "school": "Lovely Professional University",
+        "degree": "Bachelor's Degree, Computer Science and Engineering",
+        "graduated": "May 2021",
+        "description": ""
+      }
+    ],
+    "work": [
+      {
+        "company": "Capgemini",
+        "title": "Software Engineer",
+        "years": "June 2021 - Present",
+        "description": "Adding new features and applications following agile development strategy."
+      }
+    ],
+    "skills": [
+      {
+        "name": "ReactJs",
+        "level": "100%"
+      },
+      {
+        "name": "Java",
+        "level": "85%"
+      },
+      {
+        "name": "Git",
+        "level": "80%"
+      },
+      {
+        "name": "JavaScript",
+        "level": "99%"
+      },
+      {
+        "name": "Web Development",
+        "level": "95%"
+      },
+      {
+        "name": "Cyber Security and Ethical Hacking",
+        "level": "90%"
+      }
+    ]
+  },
+  "portfolio": {
+    "projects": [
+      {
+        "title": "Disney+ Clone (React JS)",
+        "category": "",
+        "image": "disneyplus.png",
+        "url": "https://frosty-lamarr-c8414e.netlify.app/"
+      },
+      {
+        "title": "E-Commerce(Mongo, Spring Boot and React js)",
+        "category": "",
+        "image": "shopping.png",
+        "url": "https://drive.google.com/file/d/1yhWPf2qkVD7YBtsD63OB4ujXj5gnJ_aF/view?usp=sharing"
+      },
+      {
+        "title": "MetaVerse Chat (React JS)",
+        "category": "",
+        "image": "news.png",
+        "url": "https://metaverse-challenge-alpha.vercel.app/"
+      }
+    ]
+  },
+  "testimonials": {
+    "testimonials": [
+      {
+        "text": "From the start of the project, through to completion, Suraj supported us and exceeded our expectations in every way. Not only was our experience personal and friendly, his ability to identify and present our key messages in an imaginative and creative way gave us a huge amount of confidence in him. He's reliable, professional and easy to work with. we look forward to continuing our working relationship together.",
+        "user": "Neel Patel"
+      },
+      {
+        "text": "I was looking for a Web professional who would create and evolve my website. Suraj delivers exactly what I want. It’s always a pleasure working and seeing him. I enjoy meeting virtually and I always leave his place with a spring in my step and a smile on my face. I know he will keep improving my website and advising me in the best ways forward for years to come. I look forward to a great working relationship and friendship with him.",
+        "user": "Neeraj Kumar"
+      }
+    ]
+  }
+}
