@@ -15,6 +15,7 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://surajraj.dev'),
   title: 'Suraj Raj | Senior Full Stack Developer (React, Next.js, TypeScript & FastAPI)',
   description:
     'Senior Full Stack Developer specializing in React, TypeScript, Next.js, and Python FastAPI. Explore my interactive 2D side-scroller career journey game or view my traditional resume.',
@@ -29,6 +30,11 @@ export const metadata: Metadata = {
     'Three.js Developer',
   ],
   authors: [{ name: 'Suraj Raj', url: 'https://github.com/surazraaz1998' }],
+  icons: {
+    icon: '/avatar.jpg',
+    shortcut: '/avatar.jpg',
+    apple: '/avatar.jpg',
+  },
   openGraph: {
     title: 'Suraj Raj | Senior Full Stack Developer Portfolio',
     description:
@@ -36,11 +42,20 @@ export const metadata: Metadata = {
     url: 'https://surajraj.dev',
     siteName: 'Suraj Raj Portfolio',
     type: 'website',
+    images: [
+      {
+        url: '/avatar.jpg',
+        width: 400,
+        height: 400,
+        alt: 'Suraj Raj Avatar',
+      },
+    ],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Suraj Raj | Senior Full Stack Developer',
     description: 'Senior Full Stack Developer specializing in React, TypeScript, Next.js, and Python FastAPI.',
+    images: ['/avatar.jpg'],
   },
   robots: {
     index: true,
