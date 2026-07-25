@@ -7,6 +7,7 @@ interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   size?: 'sm' | 'md' | 'lg';
   icon?: React.ReactNode;
   children: React.ReactNode;
+  'data-testid'?: string;
 }
 
 export const Button: React.FC<ButtonProps> = ({
@@ -15,6 +16,7 @@ export const Button: React.FC<ButtonProps> = ({
   icon,
   children,
   className,
+  'data-testid': testId = 'ui-button',
   ...props
 }) => {
   const baseStyles = 'inline-flex items-center justify-center font-medium transition-all duration-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-brand-cyan/50 disabled:opacity-50 disabled:cursor-not-allowed select-none';
@@ -35,11 +37,12 @@ export const Button: React.FC<ButtonProps> = ({
 
   return (
     <button
+      data-testid={testId}
       className={twMerge(clsx(baseStyles, variants[variant], sizes[size], className))}
       {...props}
     >
-      {icon && <span className="shrink-0">{icon}</span>}
-      <span>{children}</span>
+      {icon && <span data-testid={`${testId}-icon`} className="shrink-0">{icon}</span>}
+      <span data-testid={`${testId}-label`}>{children}</span>
     </button>
   );
 };

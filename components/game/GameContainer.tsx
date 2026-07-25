@@ -8,9 +8,9 @@ import { Loader2 } from 'lucide-react';
 const GameCanvas = dynamic(() => import('./GameCanvas'), {
   ssr: false,
   loading: () => (
-    <div className="w-full h-full flex flex-col items-center justify-center bg-slate-950 text-slate-200">
-      <Loader2 className="w-10 h-10 text-sky-400 animate-spin mb-4" />
-      <span className="font-mono text-sm tracking-wider text-sky-400">Loading 2D Game Engine...</span>
+    <div data-testid="game-loading-fallback" className="w-full h-full flex flex-col items-center justify-center bg-slate-950 text-slate-200">
+      <Loader2 data-testid="game-loading-spinner" className="w-10 h-10 text-sky-400 animate-spin mb-4" />
+      <span data-testid="game-loading-text" className="font-mono text-sm tracking-wider text-sky-400">Loading 2D Game Engine...</span>
     </div>
   ),
 });
@@ -30,6 +30,7 @@ export const GameContainer: React.FC<GameContainerProps> = ({
     <AnimatePresence>
       {isOpen && (
         <motion.div
+          data-testid="game-container-overlay"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}

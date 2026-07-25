@@ -7,6 +7,7 @@ interface BadgeProps {
   variant?: 'default' | 'cyan' | 'violet' | 'emerald' | 'amber';
   size?: 'sm' | 'md';
   className?: string;
+  'data-testid'?: string;
 }
 
 export const Badge: React.FC<BadgeProps> = ({
@@ -14,6 +15,7 @@ export const Badge: React.FC<BadgeProps> = ({
   variant = 'default',
   size = 'sm',
   className,
+  'data-testid': testId = 'ui-badge',
 }) => {
   const baseStyles = 'inline-flex items-center font-mono font-medium rounded-md border';
 
@@ -31,7 +33,7 @@ export const Badge: React.FC<BadgeProps> = ({
   };
 
   return (
-    <span className={twMerge(clsx(baseStyles, variants[variant], sizes[size], className))}>
+    <span data-testid={testId} className={twMerge(clsx(baseStyles, variants[variant], sizes[size], className))}>
       {children}
     </span>
   );

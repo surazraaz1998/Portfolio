@@ -7,6 +7,7 @@ interface CardProps {
   className?: string;
   glowColor?: 'cyan' | 'violet' | 'emerald' | 'amber' | 'none';
   hoverable?: boolean;
+  'data-testid'?: string;
 }
 
 export const Card: React.FC<CardProps> = ({
@@ -14,6 +15,7 @@ export const Card: React.FC<CardProps> = ({
   className,
   glowColor = 'none',
   hoverable = true,
+  'data-testid': testId = 'ui-card',
 }) => {
   const glowMap = {
     cyan: 'hover:border-sky-500/40 hover:shadow-[0_0_25px_-5px_rgba(56,189,248,0.25)]',
@@ -25,6 +27,7 @@ export const Card: React.FC<CardProps> = ({
 
   return (
     <div
+      data-testid={testId}
       className={twMerge(
         clsx(
           'glass-panel rounded-2xl p-6 transition-all duration-300 relative overflow-hidden',

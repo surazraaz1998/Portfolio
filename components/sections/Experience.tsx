@@ -25,23 +25,24 @@ export const Experience: React.FC = () => {
   };
 
   return (
-    <section id="experience" className="py-24 relative bg-slate-950/60">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section data-testid="experience-section" id="experience" className="py-24 relative bg-slate-950/60">
+      <div data-testid="experience-container" className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionHeader
           subtitle="Career Journey"
           title="Battle-Tested Experience & Hard Impact"
           description="A timeline of enterprise products built, performance bottlenecks solved, and security compliance achieved."
         />
 
-        <div className="relative mt-16">
+        <div data-testid="experience-timeline" className="relative mt-16">
           {/* Vertical Timeline Line */}
-          <div className="absolute left-4 md:left-1/2 top-0 bottom-0 w-0.5 bg-gradient-to-b from-sky-500 via-indigo-500 to-emerald-500 transform md:-translate-x-1/2 opacity-30" />
+          <div data-testid="experience-timeline-line" className="absolute left-4 md:left-1/2 top-0 bottom-0 w-0.5 bg-gradient-to-b from-sky-500 via-indigo-500 to-emerald-500 transform md:-translate-x-1/2 opacity-30" />
 
-          <div className="space-y-12">
+          <div data-testid="experience-zones-list" className="space-y-12">
             {CAREER_ZONES.map((zone, index) => {
               const isEven = index % 2 === 0;
               return (
                 <motion.div
+                  data-testid={`experience-zone-item-${zone.id}`}
                   key={zone.id}
                   initial={{ opacity: 0, y: 30 }}
                   whileInView={{ opacity: 1, y: 0 }}
@@ -52,50 +53,52 @@ export const Experience: React.FC = () => {
                   }`}
                 >
                   {/* Timeline Dot */}
-                  <div className="absolute left-4 md:left-1/2 transform -translate-x-1/2 flex items-center justify-center w-10 h-10 rounded-full bg-slate-900 border-2 border-sky-400 text-sky-400 shadow-glow z-10">
+                  <div data-testid={`experience-dot-${zone.id}`} className="absolute left-4 md:left-1/2 transform -translate-x-1/2 flex items-center justify-center w-10 h-10 rounded-full bg-slate-900 border-2 border-sky-400 text-sky-400 shadow-glow z-10">
                     {getIcon(zone.iconName)}
                   </div>
 
                   {/* Content Card */}
-                  <div className="ml-12 md:ml-0 md:w-[45%] w-full">
+                  <div data-testid={`experience-card-wrapper-${zone.id}`} className="ml-12 md:ml-0 md:w-[45%] w-full">
                     <Card
+                      data-testid={`experience-card-${zone.id}`}
                       hoverable
                       className="border border-slate-800 hover:border-sky-500/40 transition-all"
                     >
                       {/* Zone Tag & Date */}
-                      <div className="flex items-center justify-between gap-2 mb-3">
+                      <div data-testid={`experience-header-${zone.id}`} className="flex items-center justify-between gap-2 mb-3">
                         <span
+                          data-testid={`experience-tag-${zone.id}`}
                           className="px-2.5 py-1 rounded-md text-xs font-mono font-bold uppercase tracking-wider text-slate-950"
                           style={{ backgroundColor: zone.color }}
                         >
                           Zone {zone.id}: {zone.company}
                         </span>
-                        <div className="flex items-center gap-1.5 text-xs text-slate-400 font-mono">
+                        <div data-testid={`experience-period-wrapper-${zone.id}`} className="flex items-center gap-1.5 text-xs text-slate-400 font-mono">
                           <Calendar className="w-3.5 h-3.5" />
-                          <span>{zone.period}</span>
+                          <span data-testid={`experience-period-${zone.id}`}>{zone.period}</span>
                         </div>
                       </div>
 
                       {/* Role & Theme */}
-                      <h3 className="text-xl font-bold text-slate-100 font-sans">
+                      <h3 data-testid={`experience-role-${zone.id}`} className="text-xl font-bold text-slate-100 font-sans">
                         {zone.role}
                       </h3>
-                      <p className="text-xs font-mono text-sky-400 mt-1 mb-3">
+                      <p data-testid={`experience-theme-${zone.id}`} className="text-xs font-mono text-sky-400 mt-1 mb-3">
                         {zone.theme}
                       </p>
 
-                      <p className="text-slate-300 text-sm leading-relaxed mb-4">
+                      <p data-testid={`experience-desc-${zone.id}`} className="text-slate-300 text-sm leading-relaxed mb-4">
                         {zone.description}
                       </p>
 
                       {/* Hard Metrics Box */}
-                      <div className="grid grid-cols-2 gap-2 p-3 rounded-xl bg-slate-900/90 border border-slate-800/80 mb-4">
-                        {zone.metrics.map((metric) => (
-                          <div key={metric.label} className="text-left">
-                            <span className="text-lg font-extrabold text-emerald-400 font-mono block">
+                      <div data-testid={`experience-metrics-box-${zone.id}`} className="grid grid-cols-2 gap-2 p-3 rounded-xl bg-slate-900/90 border border-slate-800/80 mb-4">
+                        {zone.metrics.map((metric, idx) => (
+                          <div data-testid={`experience-metric-item-${zone.id}-${idx}`} key={metric.label} className="text-left">
+                            <span data-testid={`experience-metric-value-${zone.id}-${idx}`} className="text-lg font-extrabold text-emerald-400 font-mono block">
                               {metric.value}
                             </span>
-                            <span className="text-[11px] text-slate-400 font-medium">
+                            <span data-testid={`experience-metric-label-${zone.id}-${idx}`} className="text-[11px] text-slate-400 font-medium">
                               {metric.label}
                             </span>
                           </div>
@@ -103,19 +106,19 @@ export const Experience: React.FC = () => {
                       </div>
 
                       {/* Achievements Bullet List */}
-                      <div className="space-y-2 mb-4">
+                      <div data-testid={`experience-achievements-${zone.id}`} className="space-y-2 mb-4">
                         {zone.achievements.map((item, i) => (
-                          <div key={i} className="flex items-start gap-2 text-xs text-slate-300">
+                          <div data-testid={`experience-achievement-item-${zone.id}-${i}`} key={i} className="flex items-start gap-2 text-xs text-slate-300">
                             <CheckCircle2 className="w-4 h-4 text-sky-400 shrink-0 mt-0.5" />
-                            <span>{item}</span>
+                            <span data-testid={`experience-achievement-text-${zone.id}-${i}`}>{item}</span>
                           </div>
                         ))}
                       </div>
 
                       {/* Unlocked Tech Badges */}
-                      <div className="flex flex-wrap gap-1.5 pt-3 border-t border-slate-800/60">
+                      <div data-testid={`experience-skills-${zone.id}`} className="flex flex-wrap gap-1.5 pt-3 border-t border-slate-800/60">
                         {zone.unlockedSkills.map((skill) => (
-                          <Badge key={skill} variant="cyan" size="sm">
+                          <Badge data-testid={`badge-skill-${zone.id}-${skill.toLowerCase().replace(/[^a-z0-9]/g, '-')}`} key={skill} variant="cyan" size="sm">
                             {skill}
                           </Badge>
                         ))}

@@ -45,10 +45,11 @@ export const GameControls: React.FC<GameControlsProps> = ({ controls, setControl
   }, [setControls]);
 
   return (
-    <div className="absolute bottom-6 left-0 right-0 z-30 pointer-events-none px-6 flex items-center justify-between">
+    <div data-testid="game-touch-controls-bar" className="absolute bottom-6 left-0 right-0 z-30 pointer-events-none px-6 flex items-center justify-between">
       {/* On-screen Directional Touch Controls for Mobile / Touchscreens */}
-      <div className="pointer-events-auto flex items-center gap-3">
+      <div data-testid="game-touch-directional-group" className="pointer-events-auto flex items-center gap-3">
         <button
+          data-testid="btn-touch-move-left"
           onTouchStart={() => setControls((c) => ({ ...c, left: true }))}
           onTouchEnd={() => setControls((c) => ({ ...c, left: false }))}
           onMouseDown={() => setControls((c) => ({ ...c, left: true }))}
@@ -60,6 +61,7 @@ export const GameControls: React.FC<GameControlsProps> = ({ controls, setControl
         </button>
 
         <button
+          data-testid="btn-touch-move-right"
           onTouchStart={() => setControls((c) => ({ ...c, right: true }))}
           onTouchEnd={() => setControls((c) => ({ ...c, right: false }))}
           onMouseDown={() => setControls((c) => ({ ...c, right: true }))}
@@ -72,8 +74,9 @@ export const GameControls: React.FC<GameControlsProps> = ({ controls, setControl
       </div>
 
       {/* On-screen Jump Touch Button */}
-      <div className="pointer-events-auto">
+      <div data-testid="game-touch-jump-group" className="pointer-events-auto">
         <button
+          data-testid="btn-touch-jump"
           onTouchStart={() => setControls((c) => ({ ...c, jump: true }))}
           onTouchEnd={() => setControls((c) => ({ ...c, jump: false }))}
           onMouseDown={() => setControls((c) => ({ ...c, jump: true }))}

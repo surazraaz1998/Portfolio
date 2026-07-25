@@ -8,23 +8,24 @@ export const Footer: React.FC = () => {
   };
 
   return (
-    <footer className="border-t border-slate-800/80 bg-slate-950/80 py-12 relative overflow-hidden">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex flex-col md:flex-row items-center justify-between gap-6 pb-8 border-b border-slate-800/60">
+    <footer data-testid="footer-container" className="border-t border-slate-800/80 bg-slate-950/80 py-12 relative overflow-hidden">
+      <div data-testid="footer-wrapper" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div data-testid="footer-top-row" className="flex flex-col md:flex-row items-center justify-between gap-6 pb-8 border-b border-slate-800/60">
           {/* Brand */}
-          <div className="flex items-center gap-3">
-            <div className="w-9 h-9 rounded-xl bg-sky-500/10 border border-sky-500/30 flex items-center justify-center text-sky-400">
+          <div data-testid="footer-brand" className="flex items-center gap-3">
+            <div data-testid="footer-brand-icon" className="w-9 h-9 rounded-xl bg-sky-500/10 border border-sky-500/30 flex items-center justify-center text-sky-400">
               <Code2 className="w-5 h-5" />
             </div>
-            <div>
-              <span className="font-bold text-slate-200">Suraj Raj</span>
-              <p className="text-xs text-slate-400 font-mono">Senior Full Stack Developer</p>
+            <div data-testid="footer-brand-info">
+              <span data-testid="footer-brand-name" className="font-bold text-slate-200">Suraj Raj</span>
+              <p data-testid="footer-brand-title" className="text-xs text-slate-400 font-mono">Senior Full Stack Developer</p>
             </div>
           </div>
 
           {/* Social Links */}
-          <div className="flex items-center gap-4">
+          <div data-testid="footer-social-links" className="flex items-center gap-4">
             <a
+              data-testid="footer-link-email"
               href={`mailto:${PROFILE_DATA.email}`}
               className="p-2.5 rounded-xl bg-slate-900 border border-slate-800 text-slate-400 hover:text-sky-400 hover:border-sky-500/40 transition-all"
               aria-label="Email"
@@ -32,6 +33,7 @@ export const Footer: React.FC = () => {
               <Mail className="w-4 h-4" />
             </a>
             <a
+              data-testid="footer-link-github"
               href={PROFILE_DATA.github}
               target="_blank"
               rel="noopener noreferrer"
@@ -41,6 +43,7 @@ export const Footer: React.FC = () => {
               <Github className="w-4 h-4" />
             </a>
             <a
+              data-testid="footer-link-linkedin"
               href={PROFILE_DATA.linkedin}
               target="_blank"
               rel="noopener noreferrer"
@@ -53,18 +56,19 @@ export const Footer: React.FC = () => {
 
           {/* Scroll to Top */}
           <button
+            data-testid="btn-back-to-top"
             onClick={scrollToTop}
             className="flex items-center gap-2 text-xs text-slate-400 hover:text-sky-400 transition-colors p-2 rounded-lg bg-slate-900 border border-slate-800"
           >
-            <span>Back to top</span>
+            <span data-testid="back-to-top-text">Back to top</span>
             <ArrowUp className="w-3.5 h-3.5" />
           </button>
         </div>
 
         {/* Copyright */}
-        <div className="pt-6 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-500 gap-2">
-          <p>© {new Date().getFullYear()} Suraj Raj. Built with Next.js, React Three Fiber & Tailwind CSS.</p>
-          <p className="font-mono text-[11px]">Lighthouse 100 • Production Grade</p>
+        <div data-testid="footer-bottom-row" className="pt-6 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-500 gap-2">
+          <p data-testid="footer-copyright-text">© {new Date().getFullYear()} Suraj Raj. Built with Next.js, React Three Fiber & Tailwind CSS.</p>
+          <p data-testid="footer-badge-text" className="font-mono text-[11px]">Lighthouse 100 • Production Grade</p>
         </div>
       </div>
     </footer>

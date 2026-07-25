@@ -7,6 +7,7 @@ import { Experience } from '../components/sections/Experience';
 import { Education } from '../components/sections/Education';
 import { Skills } from '../components/sections/Skills';
 import { Projects } from '../components/sections/Projects';
+import { Articles } from '../components/sections/Articles';
 import { Contact } from '../components/sections/Contact';
 import { Footer } from '../components/layout/Footer';
 import { GameContainer } from '../components/game/GameContainer';
@@ -35,7 +36,7 @@ export default function Home() {
   };
 
   return (
-    <main className="relative min-h-screen bg-bg-dark text-slate-100 overflow-x-hidden selection:bg-sky-500/30 selection:text-white">
+    <main data-testid="main-content" className="relative min-h-screen bg-bg-dark text-slate-100 overflow-x-hidden selection:bg-sky-500/30 selection:text-white">
       {/* Sticky Blurred Glass Navigation */}
       <Navbar onPlayGame={handleOpenGame} />
 
@@ -53,6 +54,9 @@ export default function Home() {
 
       {/* Featured Projects Showcase */}
       <Projects />
+
+      {/* Technical Articles & Writing */}
+      <Articles />
 
       {/* Contact Section */}
       <Contact />

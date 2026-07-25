@@ -54,8 +54,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={`dark ${inter.variable} ${jetbrainsMono.variable} scroll-smooth`}>
-      <body className="bg-bg-dark text-slate-100 font-sans antialiased min-h-screen">
+    <html lang="en" data-testid="root-html" className={`dark ${inter.variable} ${jetbrainsMono.variable} scroll-smooth`}>
+      <body data-testid="root-body" className="bg-bg-dark text-slate-100 font-sans antialiased min-h-screen">
         {children}
       </body>
     </html>
